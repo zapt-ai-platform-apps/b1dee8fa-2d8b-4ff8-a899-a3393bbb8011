@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --secondary: #10b981;
+  --secondary-dark: #059669;
+  --accent: #f59e0b;
+  --accent-dark: #d97706;
+  --background: #ffffff;
+  --foreground: #111827;
+  --card: #f9fafb;
+  --card-foreground: #374151;
+  --border: #e5e7eb;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+}
+
+.dark {
+  --primary: #60a5fa;
+  --primary-dark: #3b82f6;
+  --secondary: #34d399;
+  --secondary-dark: #10b981;
+  --accent: #fbbf24;
+  --accent-dark: #f59e0b;
+  --background: #111827;
+  --foreground: #f9fafb;
+  --card: #1f2937;
+  --card-foreground: #e5e7eb;
+  --border: #374151;
+  --muted: #1f2937;
+  --muted-foreground: #9ca3af;
+}
+
+body {
+  @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600 text-white focus:ring-blue-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-green-500 hover:bg-green-600 text-white focus:ring-green-500;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-800 dark:text-gray-200 focus:ring-gray-500;
+  }
+  
+  .input {
+    @apply box-border w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+}
